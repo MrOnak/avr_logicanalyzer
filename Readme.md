@@ -1,6 +1,6 @@
 # Atmel ATTiny2313 8 channel logic analyzer
 
-This is the hardware component of a very barebones 8 channel logic analyzer 
+This is the hardware component of a very bare-bones 8 channel logic analyzer 
 that pumps out the 8 logic values out via serial. A serial2USB converter is
 assumed to be hooked to the SERIAL pins on the circuit diagram.
 
@@ -15,7 +15,7 @@ The serial connection is configured at 38400 baud which is the fastest that
 was reliably possible on the internal oscillator 8MHz clock of the ATTiny.
 
 If you extend the circuit and connect a faster external crystal you will 
-be able to get higher baudrates.
+be able to get higher baud-rates.
 
 Other than that there is nothing to configure.
 
@@ -23,9 +23,9 @@ The circuit can be powered over USB, just connect the respective pins from
 the serial2USB converter to the VCC/GND pins through the ICSP header.
 
 ## A word of caution
-Note that the circuit is very barebones, because it was made to explore what
+Note that the circuit is very bare-bones, because it was made to explore what
 is possible. For a real-life circuit you will want to add measures to protect
-agains over current and over voltage, wrong polarization etc. 
+against over current and over voltage, wrong polarization etc. 
 
 Also, a on/off switch and a "on" LED might be useful.
 

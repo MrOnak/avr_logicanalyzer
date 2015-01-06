@@ -2,7 +2,7 @@
  * Logic Analyzer based around an ATTiny2313
  *
  * Constantly pumps out the values of the PINB register via Serial
- * The Serial connection runs at 14400 baud.
+ * The Serial connection runs at 38400 baud.
  *
  * Higher Baudrates are probably possible when the MUC is clocked higher
  * than the 8MHz internal clock but I have had inconsistency issues
