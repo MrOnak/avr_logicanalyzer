@@ -2,12 +2,13 @@
  * Logic Analyzer based around an ATTiny2313
  *
  * Constantly pumps out the values of the PINB register via Serial
- * The Serial connection runs at 38400 baud.
+ * The Serial connection runs at 14400 baud.
  *
  * Higher Baudrates are probably possible when the MUC is clocked higher
  * than the 8MHz internal clock but I have had inconsistency issues
  * when I tried with 8MHz.
  */
+#include <stdlib.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
@@ -21,10 +22,18 @@
  */
 int main() {
   init();
-
+  uint8_t start = '#';
+  uint8_t reg = 0x00;
+  char buffer[3] = {0x0D, 0x0A, 0x00};
+  
   while (1) {
-  // inverting the register values because of the pullups
-    uart_putc(~PINB); 
+    // inverting the register values because of the pullups
+    reg = ~PINB;
+    
+    uart_putc(start);
+    uart_putc(reg);
+    uart_puts(buffer);
+    
   }
 
   return 0;
