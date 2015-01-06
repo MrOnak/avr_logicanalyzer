@@ -28,3 +28,23 @@ is possible. For a real-life circuit you will want to add measures to protect
 agains over current and over voltage, wrong polarization etc. 
 
 Also, a on/off switch and a "on" LED might be useful.
+
+## License
+This code is released under the GNU General Public License, version 3. See 
+the License.txt file for details.
+
+The UART library in use is based on a library written by Peter Fleury 
+<pfleury@gmx.ch> http://jump.to/fleury
+
+His code was published under GNU General Public License, version 2.
+
+The library was further extended by Tim Sharpe to include additional functions 
+such as uart_available() and uart_flush(). (See uart.h for details).
+
+His work is released under the GNU General Public License.
+
+Mr Sharpe's additions in turn are based on the Arduino HardwareSerial.h,
+released under LGPL, version 2.1.
+	
+The full text of the license can be found in the ./uart folder and online:
+http://opensource.org/licenses/GPL-2.0
