@@ -12,6 +12,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
+#include <util/delay.h>
 
 #include "main.h"
 #include "uart/uart.h"
@@ -22,18 +23,11 @@
  */
 int main() {
   init();
-  uint8_t start = '#';
-  uint8_t reg = 0x00;
-  char buffer[3] = {0x0D, 0x0A, 0x00};
-  
+
   while (1) {
-    // inverting the register values because of the pullups
-    reg = ~PINB;
-    
-    uart_putc(start);
-    uart_putc(reg);
-    uart_puts(buffer);
-    
+    uart_putc(PINB);
+
+    _delay_us(1);
   }
 
   return 0;
